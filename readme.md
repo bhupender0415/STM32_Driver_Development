@@ -4,7 +4,6 @@
 
 This README provides guidance on developing STM32 drivers using the Hardware Abstraction Layer (HAL) API. These drivers are intended to interface with various hardware peripherals like GPIO, ADC, UART, SPI, and I2C on STM32 microcontrollers. Developing custom drivers is essential for accessing and controlling these peripherals effectively.
 
-
 ## Prerequisites
 
 Before starting, ensure you have the following prerequisites in place:
@@ -22,8 +21,7 @@ Before starting, ensure you have the following prerequisites in place:
 2. ADC Driver
 3. UART Driver
 4. SPI Driver
-5. I2C Driver
-
+5. I2C Drivergit
 
 ## Contribution
 
