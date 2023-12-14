@@ -21,7 +21,7 @@ Before starting, ensure you have the following prerequisites in place:
 2. ADC Driver
 3. UART Driver
 4. SPI Driver
-5. I2C Drivergit
+5. I2C Driver
 
 ## Contribution
 
