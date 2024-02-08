@@ -26,14 +26,14 @@ I2C_HandleTypeDef hi2c1;
 
 
 /* device init struct  */
-typedef struct {
-    I2C_HandleTypeDef* i2cHandle;
-    float accData[3]; // accelerometer is in meters per second
-    float gyroData[3]; // gyro values in deg
-    float temperature;
-} MPU6050_t;
+typedef struct{
+    float accData[3];
+    float temp;
+}MPU6050_t;
 
 // Initialization function
 void MPU6050_Init (void);
+void MPU6050_Read_Acc(MPU6050_t* data);
+void MPU6050_Read_Temp(MPU6050_t* data);
 
 #endif // end MPU6050_H
