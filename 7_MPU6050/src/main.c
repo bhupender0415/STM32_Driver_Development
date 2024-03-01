@@ -23,8 +23,7 @@ int main()
       Az = pData.accData[2];
       temperature = pData.temp;
       printf("Acc X: %d, Acc Y: %d, Acc Z: %d, Temperature %d\n", (u_int16_t)Ax, (u_int16_t)Ay, (u_int16_t)Az, (u_int16_t)temperature);    //*float values are not priting
-      HAL_Delay(100);
-        
+      HAL_Delay(100);   
     }
 }
 
