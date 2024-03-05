@@ -38,8 +38,6 @@ int main()
     // blocking delay
     //printf("ADC value: %ld %ld %ld %ld %ld %ld\n", adc_value[0], adc_value[1], adc_value[2], adc_value[3], adc_value[4], adc_value[5]);
     //HAL_Delay(2000);
-
-
   }
 }
 
@@ -59,7 +57,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
     if(ind == 6)
     {
       ind = 0;
-    }
+    }    
     HAL_ADC_Start_IT(&hadc1);   // start ADC interrupt
   }
 }
