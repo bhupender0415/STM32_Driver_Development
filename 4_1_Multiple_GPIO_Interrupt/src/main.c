@@ -64,7 +64,7 @@ void interrupt_init(void)
 
     // congifuring PC13 as interrupt
     GPIO_InitStruct.Pin = GPIO_PIN_13;
-    GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+    GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING ;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
     HAL_GPIO_Init (GPIOC, &GPIO_InitStruct);
@@ -76,6 +76,10 @@ void interrupt_init(void)
     // configuring EXTI for PA1
     HAL_NVIC_SetPriority(EXTI1_IRQn , 0, 0);
     HAL_NVIC_EnableIRQ(EXTI1_IRQn );
+
+    // configuring EXTI for PC13
+    HAL_NVIC_SetPriority(EXTI15_10_IRQn , 0, 0);    
+    HAL_NVIC_EnableIRQ(EXTI15_10_IRQn );
 }
 
 
@@ -94,6 +98,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     {
         printf("Interrupt happen through PA1\n");
     }
+    else if(GPIO_Pin == GPIO_PIN_13)
+    {
+        printf("Interrupt happen through PC13\n");
+    }
 }
 
 
@@ -109,3 +117,8 @@ void EXTI1_IRQHandler(void)
     HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_1);
 }
 
+// IRQ handler for EXTI line 13
+void EXTI15_10_IRQHandler(void)
+{
+    HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_13);
+}
