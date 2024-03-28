@@ -46,10 +46,10 @@ void MPU6050_Read_Acc(MPU6050_t* acc)
 	u_int16_t accY_Raw = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]);
 	u_int16_t accZ_Raw = (int16_t)(Rec_Data[4] << 8 | Rec_Data [5]);
 
-    // convert the raw data to actual acceleration
-	acc->accData[0] = accX_Raw/2048.0;
-	acc->accData[1] = accY_Raw/2048.0;
-	acc->accData[2] = accZ_Raw/2048.0;
+    // convert the raw data to actual acceleration -2g to +2g
+	acc->accData[0] = accX_Raw * 100 / 16384.0;
+	acc->accData[1] = accY_Raw * 100 / 16384.0;
+	acc->accData[2] = accZ_Raw * 100 / 16384.0;
 }
 
 void MPU6050_Read_Temp(MPU6050_t* data) {
